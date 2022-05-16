@@ -26,7 +26,7 @@ function getMemberID(req) {
   const memberID = req?.data?.memberID;
 
   if (!memberID) {
-    throw new {
+    throw {
       statusCode: StatusCodes.NOT_FOUND,
       message: 'Member ID is missed',
     };
@@ -49,7 +49,7 @@ async function getMemberLastSyncTime(memberID) {
   );
 
   if (!member) {
-    throw new {
+    throw {
       statusCode: StatusCodes.NOT_FOUND,
       message: `Member with given ID ${memberID} not found`,
     };
